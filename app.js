@@ -9,7 +9,8 @@ var bodyParser = require('body-parser');
 var http = require('http');
 var path = require('path');
 var mongoose = require('mongoose');
-const MONGOURL = 'mongodb://localhost/mongo-express';
+//var MONGODB_URI = 'mongodb://<example>:<example>@ds013222.mlab.com:13222/properties'
+const MONGOURL = process.env.MONGODB_URI || 'mongodb://localhost/mongo-express';
 mongoose.connect(MONGOURL, err => {
     console.log(err || 'Connected to MongoDB')
 });

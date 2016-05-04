@@ -31,11 +31,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            <state relative-caret-position="195">
+              <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -111,7 +111,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="properties.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="properties.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/properties.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="331">
@@ -144,7 +144,6 @@
         <option value="$PROJECT_DIR$/public/html/state2.html" />
         <option value="$PROJECT_DIR$/models/model.js" />
         <option value="$PROJECT_DIR$/routes/api.js" />
-        <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/models/client.js" />
         <option value="$PROJECT_DIR$/models/property.js" />
         <option value="$PROJECT_DIR$/public/html/state3.html" />
@@ -162,6 +161,7 @@
         <option value="$PROJECT_DIR$/public/html/home.html" />
         <option value="$PROJECT_DIR$/routes/clients.js" />
         <option value="$PROJECT_DIR$/routes/properties.js" />
+        <option value="$PROJECT_DIR$/app.js" />
       </list>
     </option>
   </component>
@@ -409,12 +409,12 @@
       <workItem from="1462067712614" duration="19666000" />
       <workItem from="1462233301259" duration="992000" />
       <workItem from="1462237364233" duration="3564000" />
-      <workItem from="1462316859767" duration="18378000" />
+      <workItem from="1462316859767" duration="18863000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="42600000" />
+    <option name="totallyTimeSpent" value="43085000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="258" y="90" width="1186" height="763" extended-state="0" />
@@ -793,14 +793,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="20" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/html/properties.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -845,6 +837,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
           <caret line="73" column="37" selection-start-line="73" selection-start-column="37" selection-end-line="73" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
           <folding />
         </state>
       </provider>
