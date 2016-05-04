@@ -1,14 +1,27 @@
 <h2>Create new Client</h2>
-<div>Client Name</div>
-<input type="text" ng-model="newName">
-<div>Client Phone</div>
-<input type="text" ng-model="newPhone">
-<div>Client Email</div>
-<input type="text" ng-model="newEmail">
-<div>Preferred City</div>
-<input type="text" ng-model="newLocation">
-<div>Max Rental Price</div>
-<input type="text" ng-model="newPrice">
-<div>Property Features</div>
-<input type="text" ng-model="newFeatures">
+<div class="input-field">
+    <input id = 'name' type="text" ng-model="newName">
+    <label for="name">Client Name</label>
+</div>
+<div class="input-field">
+    <input id = 'phone' type="text" ng-model="newPhone">
+    <label for="phone">Client Phone</label>
+</div>
+<div class="input-field">
+    <input id = 'email' type="text" ng-model="newEmail">
+    <label for="email">Email</label>
+</div>
+<div class="input-field">
+    <input id = 'location' type="text" ng-model="newLocation">
+    <label for="location">Location</label>
+</div>
+<div class="input-field">
+    <input id = 'price' type="text" ng-model="newPrice">
+    <label for="price">Max Price</label>
+</div>
+<div class="input-field">
+    <input id = 'features' type="text" ng-model="newFeatures">
+    <label for="features">Features</label>
+</div>
+
 <button ng-click="newClient()">Post This</button>

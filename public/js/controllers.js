@@ -3,6 +3,10 @@ var app = angular.module('angularApp');
 
 app.controller('clientCtrl', function(clientService, $scope, $state) {
     $scope.editing = false;
+    $scope.order = "name";
+    $scope.newOrder = function(param) {
+        $scope.order = param;
+    };
     clientService.getAll()
         .then(stuff => {
         //    console.log(stuff);
@@ -31,6 +35,10 @@ app.controller('clientCtrl', function(clientService, $scope, $state) {
 
 app.controller('propertyCtrl', function(propertyService, $scope, $state) {
     $scope.editing = false;
+    $scope.order = "name";
+    $scope.newOrder = function(param) {
+        $scope.order = param;
+    };
     propertyService.getAll()
         .then(stuff => {
          //   console.log(stuff);
@@ -123,6 +131,7 @@ app.controller('propertyDelete', function(propertyService, $scope, $state) {
 
 });
 app.controller('state1Ctrl', function(clientService, $scope, $state) {
+  
     $scope.newClient = function(){
         var newData = {
             name: $scope.newName,

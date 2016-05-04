@@ -1,14 +1,15 @@
 <h2>Client Page</h2>
-<table class="table">
+<div>Search for client: <input type="text" ng-model="myfilter"></div>
+<table class="striped responsive-table">
     <tr>
-        <th>Name</th>
-        <th>Phone #</th>
-        <th>Email</th>
-        <th>Preferred Location</th>
-        <th>Price Range</th>
-        <th>Features</th>
+        <th ng-click="newOrder('name')">Name</th>
+        <th ng-click="newOrder('phone')">Phone #</th>
+        <th ng-click="newOrder('email')">Email</th>
+        <th ng-click="newOrder('location')">Preferred Location</th>
+        <th ng-click="newOrder('pricerange')">Price Range</th>
+        <th ng-click="newOrder('features')">Features</th>
     </tr>
-    <tr ng-repeat = 'items in apiData.data'>
+    <tr ng-repeat = 'items in apiData.data | orderBy:order | filter:myfilter'>
         <td>{{items.name}}</td>
         <td>{{items.phone}}</td>
         <td>{{items.email}}</td>
@@ -16,7 +17,7 @@
         <td>{{items.pricerange}}</td>
         <td>{{items.features}}</td>
         <td> <button ui-sref='clientDelete({id:items._id})'>Delete</button></td>
-        <td><button ui-sref= 'editClient({id:items._id})'>Edit Item</button></td>
+        <td><button ui-sref= 'editClient({id:items._id})'>Edit</button></td>
     </tr>
 </table>
 

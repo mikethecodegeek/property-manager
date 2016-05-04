@@ -10,21 +10,24 @@
     <script src="/js/services.js"></script>
     <link rel="stylesheet" href="/css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
 
 </head>
 <body ng-app='angularApp'>
-<button ui-sref='home'>Home</button>
-<button ui-sref='state1'>Add Client</button>
-<button ui-sref='state2'>Edit</button>
-<button ui-sref='state4'>Clients</button>
-<button ui-sref='state5'>Properties</button>
-<button ui-sref='addProperty'>Add Property</button>
 
-<md-container>
+<nav>
+    <div class="nav-wrapper">
+        <ul id="nav-mobile" class="hide-on-med-and-down left">
+            <li> <a ui-sref='home'>Home</a></li>
+            <li> <a ui-sref='state4'>Clients</a></li>
+            <li> <a ui-sref='state5'>Properties</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
     <ui-view></ui-view>
-</md-container>
+</div>
 </body>
 </html>

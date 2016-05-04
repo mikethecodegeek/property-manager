@@ -1,14 +1,15 @@
 <h2>Property Page</h2>
-<table class="table">
+<div>Search for property: <input type="text" ng-model="myfilter"></div>
+<table class="striped responsive-table">
 <tr>
-    <th>Type</th>
-    <th>Bedrooms</th>
-    <th>Bathrooms</th>
-    <th>Location</th>
-    <th>Price per Month</th>
-    <th>Features</th>
+    <th ng-click="newOrder('type')">Type</th>
+    <th ng-click="newOrder('bedrooms')">Bedrooms</th>
+    <th ng-click="newOrder('bathrooms')">Bathrooms</th>
+    <th ng-click="newOrder('location')">Location</th>
+    <th ng-click="newOrder('price')">Price per Month</th>
+    <th ng-click="newOrder('features')">Features</th>
 </tr>
-<tr ng-repeat = 'items in apiData.data'>
+<tr ng-repeat = 'items in apiData.data | orderBy:order | filter:myfilter'>
     <td>{{items.type}}</td>
     <td>{{items.bedrooms}}</td>
     <td>{{items.bathrooms}}</td>
@@ -16,7 +17,7 @@
     <td>{{items.price}}</td>
     <td>{{items.features}}</td>
     <td> <button ui-sref='propertyDelete({id:items._id})'>Delete</button></td>
-    <td> <button ui-sref= 'editProperty({id:items._id})'>Edit Item</button></td>
+    <td> <button ui-sref= 'editProperty({id:items._id})'>Edit</button></td>
 </tr>
 </table>
 
