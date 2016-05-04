@@ -1,0 +1,28 @@
+<h2>Property Page</h2>
+<table class="table">
+<tr>
+    <th>Type</th>
+    <th>Bedrooms</th>
+    <th>Bathrooms</th>
+    <th>Location</th>
+    <th>Price per Month</th>
+    <th>Features</th>
+</tr>
+<tr ng-repeat = 'items in apiData.data'>
+    <td>{{items.type}}</td>
+    <td>{{items.bedrooms}}</td>
+    <td>{{items.bathrooms}}</td>
+    <td>{{items.location}}</td>
+    <td>{{items.price}}</td>
+    <td>{{items.features}}</td>
+    <td> <button ui-sref='propertyDelete({id:items._id})'>Delete</button></td>
+    <td> <button ui-sref= 'editProperty({id:items._id})'>Edit Item</button></td>
+</tr>
+</table>
+
+<div ng-show="editing">
+    <input type="text" ng-model="newItem">
+    <button ng-click="postEdit()">Confirm Edit</button>
+</div>
+
+</div>

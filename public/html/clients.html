@@ -1,0 +1,28 @@
+<h2>Client Page</h2>
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Phone #</th>
+        <th>Email</th>
+        <th>Preferred Location</th>
+        <th>Price Range</th>
+        <th>Features</th>
+    </tr>
+    <tr ng-repeat = 'items in apiData.data'>
+        <td>{{items.name}}</td>
+        <td>{{items.phone}}</td>
+        <td>{{items.email}}</td>
+        <td>{{items.location}}</td>
+        <td>{{items.pricerange}}</td>
+        <td>{{items.features}}</td>
+        <td> <button ui-sref='clientDelete({id:items._id})'>Delete</button></td>
+        <td><button ui-sref= 'editClient({id:items._id})'>Edit Item</button></td>
+    </tr>
+</table>
+
+<div ng-show="editing">
+    <input type="text" ng-model="newItem">
+    <button ng-click="postEdit()">Confirm Edit</button>
+</div>
+
+</div>

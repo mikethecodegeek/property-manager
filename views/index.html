@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular</title>
+    <script src="/bower_components/angular/angular.min.js"></script>
+    <script src="/bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="/js/module.js"></script>
+    <script src="/js/controllers.js"></script>
+    <script src="/js/services.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+</head>
+<body ng-app='angularApp'>
+<button ui-sref='home'>Home</button>
+<button ui-sref='state1'>Add Client</button>
+<button ui-sref='state2'>Edit</button>
+<button ui-sref='state4'>Clients</button>
+<button ui-sref='state5'>Properties</button>
+<button ui-sref='addProperty'>Add Property</button>
+
+<md-container>
+    <ui-view></ui-view>
+</md-container>
+</body>
+</html>
