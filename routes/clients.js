@@ -69,7 +69,7 @@ router.post('/feature/:id', (req,res)=> {
             console.log(err);
         } else {
             client.features.push(req.body.feature);
-            tree.save((err, tree) => {
+            client.save((err, tree) => {
                 if (err){
                     console.log(err);
                 }
