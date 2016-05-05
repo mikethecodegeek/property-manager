@@ -18,6 +18,18 @@ router.get('/', (req,res)=> {
     });
 });
 
+router.get('/props/totalRentals', (req,res)=> {
+    Property.find({occupants: []})
+        .exec((err,data) => {
+            if (err) {
+                res.send(err);
+            }
+            else {
+                res.send(data);
+            }
+        })
+});
+
 router.post('/', (req,res)=> {
 
     var property = new Property(req.body);

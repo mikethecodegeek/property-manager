@@ -213,3 +213,32 @@ app.controller('state5Ctrl', function(propertyService, $scope, $state) {
 
     }
 });
+app.controller('propStatsCtrl', function(propertyService, clientService, $scope, $state) {
+
+    clientService.getAll()
+        .then(clients => {
+          //  console.log("clients: ", clients);
+            $scope.clientTotals = clients;
+            var totprice = 0;
+            for (var a=0; a< clients.data.length; a++){
+                if (clients.data[a].location != undefined) {
+                    totprice = totprice + clients.data[a].location.price
+                }
+            }
+           $scope.totalIncome = totprice;
+        });
+
+    propertyService.getAll()
+        .then(props => {
+          //  console.log("props: ", props);
+            $scope.propsTotals = props;
+            propertyService.getRentals()
+                .then(props => {
+               //     console.log("prop rentals: ", props);
+                    $scope.propRentals = props;
+                    $scope.rented = $scope.propsTotals.data.length - $scope.propRentals.data.length;
+                });
+        });
+   
+    
+});

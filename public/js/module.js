@@ -16,6 +16,11 @@ app.config(function($stateProvider, $urlRouterProvider) {
             templateUrl: '/html/home.html',
             controller: 'clientDelete'
         })
+        .state('stats', {
+            url: '/management/stats',
+            templateUrl: '/html/manager.html',
+            controller: 'propStatsCtrl'
+        })
         .state('propertyDelete', {
             url: '/delete/:id',
             templateUrl: '/html/home.html',
