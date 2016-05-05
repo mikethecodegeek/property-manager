@@ -1,27 +1,19 @@
 <h2>Create new Client</h2>
 <div class="input-field">
+    <label for = 'name'>Client Name</label>
     <input id = 'name' type="text" ng-model="newName">
-    <label for="name">Client Name</label>
+
 </div>
 <div class="input-field">
+    <label for = 'phone'>Client Phone</label>
     <input id = 'phone' type="text" ng-model="newPhone">
-    <label for="phone">Client Phone</label>
+
 </div>
 <div class="input-field">
+    <label for = 'email'>Email</label>
     <input id = 'email' type="text" ng-model="newEmail">
-    <label for="email">Email</label>
+
 </div>
-<div class="input-field">
-    <input id = 'location' type="text" ng-model="newLocation">
-    <label for="location">Location</label>
-</div>
-<div class="input-field">
-    <input id = 'price' type="text" ng-model="newPrice">
-    <label for="price">Max Price</label>
-</div>
-<div class="input-field">
-    <input id = 'features' type="text" ng-model="newFeatures">
-    <label for="features">Features</label>
-</div>
+
 
 <button ng-click="newClient()">Post This</button>

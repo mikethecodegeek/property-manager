@@ -31,6 +31,15 @@ app.service('propertyService',function($http) {
     this.getAll = () => {
         return $http.get('./api/properties');
     };
+    this.getFree = () => {
+        return $http.get('./api/clients/nohome/client');
+    };
+    this.moveIn = (clientId,propertyId) => {
+        return $http.put(`./api/clients/${clientId}/moveIn/${propertyId}`);
+    };
+    this.moveOut = (clientId,propertyId) => {
+        return $http.put(`./api/clients/${clientId}/moveOut/${propertyId}`);
+    };
     this.create = newPost => {
          console.log(newPost)
         return $http.post('./api/properties', {type: newPost.type,

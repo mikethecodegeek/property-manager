@@ -1,27 +1,23 @@
 <h2>Edit Property</h2>
 <div>
+    <label>Type of Property</label>
     <input id = 'type' type="text" ng-model="newType">
-    <label for="type">Type of Property</label>
 </div>
 <div>
+    <label>Location</label>
     <input id = 'location' type="text" ng-model="newLocation">
-    <label for="location">Location</label>
 </div>
 <div>
+    <label>Price per Month</label>
     <input id = 'price' type="text" ng-model="newPrice">
-    <label for="price">Price per Month</label>
 </div>
 <div>
+    <label>Bedrooms</label>
     <input id = 'bedroom' type="text" ng-model="newBedroom">
-    <label for="bedroom">Bedrooms</label>
 </div>
 <div>
+    <label>Bathrooms</label>
     <input id = 'bathroom' type="text" ng-model="newBathroom">
-    <label for="bathroom">Bathrooms</label>
-</div>
-<div>
-    <input id = 'features' type="text" ng-model="newFeatures">
-    <label for="features">Features</label>
 </div>
 
 <button ng-click="postEdit()">Add Property</button>

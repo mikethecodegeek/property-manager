@@ -6,7 +6,7 @@ var propertySchema= mongoose.Schema({
     bathrooms: {type: Number, required: true},
     location: {type: String, required: true},
     price: {type: Number, default: 1000},
-    features: [String]
+    occupants: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Client' }]
 });
 var Property = mongoose.model('Property', propertySchema);
 module.exports = Property;

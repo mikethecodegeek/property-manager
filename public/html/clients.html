@@ -5,17 +5,14 @@
         <th ng-click="newOrder('name')">Name</th>
         <th ng-click="newOrder('phone')">Phone #</th>
         <th ng-click="newOrder('email')">Email</th>
-        <th ng-click="newOrder('location')">Preferred Location</th>
-        <th ng-click="newOrder('pricerange')">Price Range</th>
-        <th ng-click="newOrder('features')">Features</th>
+        <th ng-click="newOrder('location')">Location</th>
     </tr>
     <tr ng-repeat = 'items in apiData.data | orderBy:order | filter:myfilter'>
         <td>{{items.name}}</td>
         <td>{{items.phone}}</td>
         <td>{{items.email}}</td>
-        <td>{{items.location}}</td>
-        <td>{{items.pricerange}}</td>
-        <td>{{items.features}}</td>
+        <td>{{items.location.location}}</td>
+
         <td> <a class='waves-effect waves-light btn' ui-sref='clientDelete({id:items._id})'>Delete</a></td>
         <td><a class='waves-effect waves-light btn' ui-sref= 'editClient({id:items._id})'>Edit</></td>
     </tr>

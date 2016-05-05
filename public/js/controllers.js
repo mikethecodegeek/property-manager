@@ -28,23 +28,59 @@ app.controller('clientCtrl', function(clientService, $scope, $state) {
                     $scope.apiData = stuff;
                 })
         )
-    }
-
+    };
+   
 
 });
 
 app.controller('propertyCtrl', function(propertyService, $scope, $state) {
     $scope.editing = false;
     $scope.order = "name";
+    $scope.currentProperty = '';
+    $scope.managed = false;
     $scope.newOrder = function(param) {
         $scope.order = param;
     };
     propertyService.getAll()
         .then(stuff => {
-         //   console.log(stuff);
+       //    console.log(stuff);
             $scope.apiData = stuff;
+
         });
 
+    propertyService.getFree()
+        .then(tenants=> {
+            //  console.log(stuff);
+            $scope.freeTenants = tenants.data;
+       //     console.log(tenants)
+
+        });
+
+    $scope.getTenants = function(tenants) {
+        $scope.managed='true';
+        $scope.current = tenants;
+        $scope.currentProperty = tenants._id;
+        console.log('prop: ', $scope.currentProperty);
+        console.log(tenants)
+
+    };
+    $scope.moveInTenant = function(client) {
+        propertyService.moveIn(client._id,$scope.currentProperty);
+        $scope.current.occupants.push(client);
+        var occ = $scope.freeTenants;
+        var ind = occ.indexOf(client);
+        occ.splice(ind, 1);
+    };
+    $scope.moveOutTenant = function(client) {
+        propertyService.moveOut(client._id,$scope.currentProperty);
+        var occ = $scope.current.occupants;
+        var ind = occ.indexOf(client);
+        occ.splice(ind, 1);
+        $scope.freeTenants.push(client);
+    }
+    $scope.doneManaging = function() {
+        $scope.managed=false;
+    }
 
 });
 app.controller('editPropertyCtrl', function(propertyService, $scope, $state) {

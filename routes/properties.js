@@ -5,7 +5,9 @@ var Property = require('../models/property');
 
 router.get('/', (req,res)=> {
 
-    Property.find((err, data) => {
+    Property.find({})
+        .populate('occupants')
+        .exec((err, data) => {
         if (err) {
             console.log(err)
         }

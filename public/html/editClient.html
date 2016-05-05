@@ -1,28 +1,20 @@
 <h2>Edit Client</h2>
 <div>
+    <label>Client Name</label>
     <input id = 'name' type="text" ng-model="newName">
-    <label for="name">Client Name</label>
+
 </div>
+
 <div>
-    <input id = 'location' type="text" ng-model="newLocation">
-    <label for="location">Location</label>
-</div>
-<div>
-    <input id = 'price' type="text" ng-model="newPrice">
-    <label for="price">Max Price</label>
-</div>
-<div>
+    <label>Client Phone #</label>
     <input id = 'phone' type="text" ng-model="newPhone">
-    <label for="phone">Client Phone #</label>
 </div>
 <div>
+    <label>Email Address</label>
     <input id = 'email' type="text" ng-model="newEmail">
-    <label for="email">Email Address</label>
+
 </div>
-<div>
-    <input id = 'features' type="text" ng-model="newFeatures">
-    <label for="features">Features</label>
-</div>
+
 
 
 <button ng-click="postEdit()">Edit Client</button>
