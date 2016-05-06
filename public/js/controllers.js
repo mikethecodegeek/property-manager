@@ -65,19 +65,24 @@ app.controller('propertyCtrl', function(propertyService, $scope, $state) {
 
     };
     $scope.moveInTenant = function(client) {
-        propertyService.moveIn(client._id,$scope.currentProperty);
-        $scope.current.occupants.push(client);
-        var occ = $scope.freeTenants;
-        var ind = occ.indexOf(client);
-        occ.splice(ind, 1);
+        if ($scope.current.occupants.length < $scope.current.bedrooms) {
+            propertyService.moveIn(client._id, $scope.currentProperty);
+            $scope.current.occupants.push(client);
+            var occ = $scope.freeTenants;
+            var ind = occ.indexOf(client);
+            occ.splice(ind, 1);
+        } else {
+            swal({   title: "Too many Tenants!",   text: "Cannot have more tenants than bedrooms! Please move another tenant out first.",   type: "error",   confirmButtonText: "Cool" });
+        }
     };
     $scope.moveOutTenant = function(client) {
+
         propertyService.moveOut(client._id,$scope.currentProperty);
         var occ = $scope.current.occupants;
         var ind = occ.indexOf(client);
         occ.splice(ind, 1);
         $scope.freeTenants.push(client);
-    }
+    };
     $scope.doneManaging = function() {
         $scope.managed=false;
     }
@@ -178,7 +183,7 @@ app.controller('state1Ctrl', function(clientService, $scope, $state) {
             features: $scope.newFeatures
         };
         clientService.create(newData)
-            .then($state.go('home'));
+            .then($state.go('state4'));
 
     }
     
@@ -209,7 +214,7 @@ app.controller('state5Ctrl', function(propertyService, $scope, $state) {
             features: $scope.newFeatures
         }
         propertyService.create(newData)
-            .then($state.go('home'));
+            .then($state.go('state5'));
 
     }
 });
